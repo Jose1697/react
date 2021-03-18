@@ -4,7 +4,7 @@ const useInitialState = (API) => {
     //useState
     const [ videos, setVideos ] = useState({ mylist: [], trends: [], originals: [] });
     
-    //useEffect
+    //useEffect: Hace el llamado
     useEffect(() => {
         fetch(API)
             .then(response => response.json())

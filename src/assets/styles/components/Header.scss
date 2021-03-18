@@ -4,9 +4,11 @@
     background-color: #8F57FD;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;  
+}
 
-    
+.isLogin, .isRegister{
+    background-color: #21c08b ;
 }
 
 .header__img{
@@ -55,6 +57,7 @@
 
 .header__menu--profile img{
     width: 40px;
-    height: 40px;
     margin-right: 8px;
+    border-radius: 100%;
+    object-fit: cover;
 }
