@@ -7,11 +7,9 @@ import '../assets/styles/components/CarouselItem.scss';
 import removeIcon from '../assets/static/remove-icon.png';
 
 const CarouselItem = (props) => {
-  const { id, cover, title, year, contentRating, duration, isList } = props;
+  const { id, cover, title, year, contentRating, duration, userMovieId, isList } = props;
   const handleSetFavorite = () => {
-    props.setFavorite({
-      id, cover, title, year, contentRating, duration,
-    });
+    props.setFavorite(id, cover, title, year, contentRating, duration);
   };
 
   const handleDeleteFavorite = (itemId) => {
@@ -35,7 +33,7 @@ const CarouselItem = (props) => {
               className='carousel-item__details--img'
               src={removeIcon}
               alt='Remove Icon'
-              onClick={() => handleDeleteFavorite(id)}
+              onClick={() => handleDeleteFavorite(userMovieId)}
             />
           ) : (
             <img
@@ -62,6 +60,7 @@ CarouselItem.propTypes = {
   year: PropTypes.number,
   contentRating: PropTypes.string,
   duration: PropTypes.number,
+  userMovieId: PropTypes.string,
 };
 
 // export default CarouselItem;
@@ -69,6 +68,10 @@ CarouselItem.propTypes = {
 const mapDispatchToProps = {
   setFavorite,
   deleteFavorite,
+};
+
+CarouselItem.propTypes = {
+  setFavorite: PropTypes.func,
 };
 
 export default connect(null, mapDispatchToProps)(CarouselItem);

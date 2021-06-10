@@ -6,6 +6,7 @@ import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Home = ({ myList, trends, originals }) => {
 
@@ -39,6 +40,7 @@ const Home = ({ myList, trends, originals }) => {
           {originals.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
+      <Footer />
     </>
 
   );
